@@ -6,5 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts 'Creating user'
+user = FactoryBot.create(:user, email: 'mike@example.com')
+
 puts 'Creating notes'
-5.times { FactoryBot.create(:note) } if Note.count.zero?
+5.times { FactoryBot.create(:note, user: user) } if Note.count.zero?
