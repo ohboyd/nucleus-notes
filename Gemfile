@@ -29,6 +29,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.7', '>= 4.7.2' # authentication library with tons of built-in security
 
 group :development, :test do
+  gem 'dotenv-rails', '~> 2.7', '>= 2.7.6' # store environment variables in .env file
   gem 'factory_bot_rails' # replaces fixtures to create objects and their associations
   gem 'faker' # useful library for generating fake data
   gem 'pry', '~> 0.12.2' # debugger tool which works as a runtime developer console
