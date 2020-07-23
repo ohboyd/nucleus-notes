@@ -18,7 +18,9 @@ class NotesController < ApplicationController
 
     if @note.save
       redirect_to @note
+      flash[:notice] = 'Note successfully created!'
     else
+      flash[:alert] = "Unable to create note: #{@note.errors.full_messages.join(',')}"
       render :new
     end
   end
@@ -29,14 +31,16 @@ class NotesController < ApplicationController
   def update
     if @note.update(note_params)
       redirect_to @note
+      flash[:notice] = 'Note successfully updated!'
     else
+      flash[:alert] = "Unable to update note: #{@note.errors.full_messages.join(',')}"
       render :edit
     end
   end
 
   def destroy
     @note.destroy
-    redirect_to notes_path
+    redirect_to notes_path, alert: 'Note successfully deleted!'
   end
 
   private

@@ -6,7 +6,7 @@ class Note < ApplicationRecord
   validates :title, presence: true, if: :content_missing?
   validates :title, length: { maximum: 30 }, allow_blank: true
   validates :content, presence: true, if: :title_missing?
-  validates :content, length: { maximum: 1000 }, allow_blank: true
+  validates :content, length: { maximum: 1000 }, allow_blank: true, on: :create
 
   before_validation :set_title_using_content
 
