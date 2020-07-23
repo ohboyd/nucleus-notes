@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   before_action :find_note, only: %i[show edit update destroy]
 
   def index
-    @notes = Note.where(user_id: current_user)
+    @notes = Note.where(user_id: current_user).with_rich_text_content_and_embeds
   end
 
   def show
