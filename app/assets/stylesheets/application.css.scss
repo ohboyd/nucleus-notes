@@ -7,3 +7,14 @@
 @import "welcome.scss";
 @import "./actiontext.scss";
 @import "devise.scss";
+
+$lightgreen:#95e9d8;
+$darklavender:#8a71d1;
+
+.btn-secondary {
+  @include button-variant($lightgreen, darken($lightgreen, 7.5%), darken($lightgreen, 10%), lighten($lightgreen,5%), lighten($lightgreen, 10%), darken($lightgreen,30%));
+}
+
+.btn-primary {
+  @include button-variant($darklavender, darken($darklavender, 7.5%), darken($darklavender, 10%), lighten($darklavender,5%), lighten($darklavender, 10%), darken($darklavender,30%));
+}

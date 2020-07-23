@@ -1,9 +1,11 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-dark bg-dark">
   <%= link_to image_tag('logo.jpg', size: 120), root_path %>
   <% if user_signed_in? %>
-    <%= link_to 'New Note', new_note_path %>
-    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+    <div class="float-right">
+      <%= link_to 'New Note', new_note_path, class: 'btn btn-primary' %>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
+    </div>
   <% else %>
-    <%= link_to 'Sign In', new_user_session_path %>
+    <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary float-right' %>
   <% end %>
 </nav>
