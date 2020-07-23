@@ -1,8 +1,10 @@
 <h1>My Envelope</h1>
-
-<% @notes.each do |note| %>
-  <h2><%= link_to note.title, note %><span><%= " (created #{time_ago_in_words(note.created_at)} ago)" %></span></h2>
-  <p><%= note.content %></p>
+<% unless @notes.blank? %>
+  <% @notes.each do |note| %>
+    <h2><%= link_to note.title, note %><span><%= " (created #{time_ago_in_words(note.created_at)} ago)" %></span></h2>
+    <p><%= note.content %></p>
+  <% end %>
+<% else %>
+  <p>Looks like you still haven't created any notes. Create one using the button below to get started.</p>
+  <button type="button" name="button"><%= link_to 'New Note', new_note_path %></button>
 <% end %>
-
-<%= link_to 'New Note', new_note_path %>
