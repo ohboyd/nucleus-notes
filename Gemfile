@@ -3,47 +3,32 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# Gems generated for normal rails 6 app:
 gem 'rails', '~> 6.0.0'
-# Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
-# Use Puma as the app server
 gem 'puma', '~> 3.11'
-# Use SCSS for stylesheets
 gem 'sass-rails', '~> 5'
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'webpacker', '~> 4.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-
-# Connect to s3 for storing files with Active Storage
-gem 'aws-sdk-s3', require: false
-
-# Use Active Storage variant
-gem 'image_processing', '~> 1.2'
-
-# Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-
-gem 'devise', '~> 4.7', '>= 4.7.2' # authentication library with tons of built-in security
-
-group :development, :test do
-  gem 'dotenv-rails', '~> 2.7', '>= 2.7.6' # store environment variables in .env file
-  gem 'factory_bot_rails' # replaces fixtures to create objects and their associations
-  gem 'faker' # useful library for generating fake data
-  gem 'pry', '~> 0.12.2' # debugger tool which works as a runtime developer console
-  gem 'rspec-rails'
-end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+end
+
+
+# 'Aftermarket' Gems to handle app-specific details:
+gem 'aws-sdk-s3', require: false # Easily connect to s3 with ruby to store files via Active Storage
+gem 'image_processing', '~> 1.2' # Use Active Storage variant
+gem 'devise', '~> 4.7', '>= 4.7.2' # Authentication library with tons of built-in security
+
+group :development, :test do
+  gem 'dotenv-rails', '~> 2.7', '>= 2.7.6' # Store dev environment variables in .env file
+  gem 'factory_bot_rails' # Replaces fixtures to create objects and their associations
+  gem 'faker' # Useful library for generating fake data
+  gem 'pry', '~> 0.12.2' # Debugger tool which works as a runtime developer console
+  gem 'rspec-rails' # Prefer to use rspec over minitest due to the output clarity
 end
