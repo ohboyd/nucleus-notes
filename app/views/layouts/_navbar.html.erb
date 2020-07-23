@@ -2,10 +2,10 @@
   <%= link_to image_tag('logo.jpg', size: 120), root_path %>
   <% if user_signed_in? %>
     <div class="float-right">
-      <%= link_to 'New Note', new_note_path, class: 'btn btn-primary' %>
-      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
+      <%= link_to 'New note', new_note_path, class: 'btn btn-primary' %>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
     </div>
   <% else %>
-    <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary float-right' %>
+    <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-primary float-right' %>
   <% end %>
 </nav>

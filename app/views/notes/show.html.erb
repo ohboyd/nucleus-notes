@@ -1,8 +1,14 @@
-<h1>Look at this note, dood.</h1>
+<h1 class="text-center">Your note</h1>
+<div class="devise-form mb-2">
+  <div class="card p-5 mx-auto text-center">
+    <h2><%= @note.title %></h2>
+    <p><%= @note.content %></p>
 
-<h2><%= @note.title %></h2>
-<p><%= @note.content %></p>
-
-<%= link_to 'All Notes', notes_path %>
-<%= link_to 'Edit', edit_note_path(@note) %>
-<%= link_to 'Delete', note_path(@note), method: :delete, data: { confirm: 'Are you sure?'}  %>
+    <div class="form-group">
+      <%= link_to 'Edit', edit_note_path(@note), class: 'btn btn-primary' %><br>
+    </div>
+    <div class="form-group">
+    <%= link_to 'Delete', note_path(@note), method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-outline-secondary'  %>
+    </div>
+  </div>
+</div>
