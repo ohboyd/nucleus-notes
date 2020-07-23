@@ -10,6 +10,7 @@ $error-background-color: $light-yellow;
 .flash {
   @extend .alert;
   text-align: center;
+  margin-top: -1rem;
   margin-bottom: 2rem;
 
   &.notice {
