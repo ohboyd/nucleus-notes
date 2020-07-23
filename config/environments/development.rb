@@ -63,5 +63,14 @@ Rails.application.configure do
   # Devise requires this: Ensure you have defined default url options in your environments
   # files. Here is an example of default_url_options appropriate for a development environment
   # in config/environments/development.rb:
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "example.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password:ENV["GMAIL_PASSWORD"]
+  }
   config.action_mailer.default_url_options = { host: ENV['URL_HOST'], port: 3000 }
 end
