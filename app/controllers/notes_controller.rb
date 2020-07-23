@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :find_note, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   def index
     @notes = Note.where(user_id: current_user).with_rich_text_content_and_embeds
