@@ -20,10 +20,11 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
 # Connect to s3 for storing files with Active Storage
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk-s3', require: false
+
+# Use Active Storage variant
+gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
