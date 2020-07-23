@@ -1,0 +1,46 @@
+$dark-sky-blue: #91C4D5;
+$light-yellow: #FF934F;
+$red: #DB5461;
+
+$error-color: $red;
+$error-background-color: $light-yellow;
+
+// Flashes
+
+.flash {
+  @extend .alert;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  &.notice {
+    background-color: $dark-sky-blue;
+  }
+
+  &.alert {
+    background-color: $light-yellow;
+  }
+
+  &.danger {
+    background-color: $red;
+  }
+}
+
+// Errors
+
+section.errors {
+  margin: 1rem 0;
+  padding: 1.5rem;
+  border-radius: 0.3rem;
+  background: $error-background-color;
+
+  h2 {
+    color: $error-color;
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+}
