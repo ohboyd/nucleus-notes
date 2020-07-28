@@ -3,7 +3,7 @@ class NotesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @notes = Note.where(user_id: current_user).order(updated_at: :desc).with_rich_text_content_and_embeds
+    @notes = policy_scope(Note).order(updated_at: :desc).with_rich_text_content_and_embeds
   end
 
   def show
@@ -46,7 +46,7 @@ class NotesController < ApplicationController
   private
 
     def find_note
-      @note = Note.find(params[:id])
+      @note = authorize(Note.find(params[:id]))
     end
 
     def note_params
