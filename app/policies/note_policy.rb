@@ -4,15 +4,15 @@ class NotePolicy < ApplicationPolicy
   end
 
   def create?
-    @record.user == user
+    show?
   end
 
   def update?
-    @record.user == user
+    show?
   end
 
   def destroy?
-    @record.user == user
+    show?
   end
 
   class Scope < Scope
