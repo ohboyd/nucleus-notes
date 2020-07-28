@@ -3,7 +3,8 @@
 
   <div class="mb-4">
     <% if show_random_button(@notes) %>
-      <%= link_to 'Random task', '#', class: 'btn btn-secondary' %>
+      <h4>Which task should I start on next?</h4>
+      <%= link_to 'Randomize', note_path(random_task(@notes)), class: 'btn btn-secondary' %>
     <% end %>
   </div>
 
