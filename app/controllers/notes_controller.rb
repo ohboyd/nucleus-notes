@@ -20,7 +20,7 @@ class NotesController < ApplicationController
       redirect_to @note
       flash[:notice] = 'Note successfully created!'
     else
-      flash[:alert] = "Unable to create note: #{@note.errors.full_messages.join(',')}"
+      flash[:alert] = "Unable to create note: #{@note.errors.full_messages.join(', ')}"
       render :new
     end
   end
@@ -33,7 +33,7 @@ class NotesController < ApplicationController
       redirect_to @note
       flash[:notice] = 'Note successfully updated!'
     else
-      flash[:alert] = "Unable to update note: #{@note.errors.full_messages.join(',')}"
+      flash[:alert] = "Unable to update note: #{@note.errors.full_messages.join(', ')}"
       render :edit
     end
   end

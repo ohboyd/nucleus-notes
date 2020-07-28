@@ -3,17 +3,16 @@ class Note < ApplicationRecord
 
   has_rich_text :content
 
-  validates :title, presence: true, if: :content_missing?
-  validates :title, length: { maximum: 30 }, allow_blank: true
-  validates :content, presence: true, if: :title_missing?
-  validates :content, length: { maximum: 1000 }, allow_blank: true, on: :create
+  before_validation :set_title_using_content, if: :title_missing?
 
-  before_validation :set_title_using_content
+  validates :title, length: { maximum: 30 }, allow_blank: true
+  validate :title_or_content_present
+  validate :content_length, unless: :content_missing?
 
   private
 
     def set_title_using_content
-      self.title = content.to_plain_text[0...30] unless content_missing?
+      self.title = content&.to_plain_text[0...30]
     end
 
     def content_missing?
@@ -22,5 +21,17 @@ class Note < ApplicationRecord
 
     def title_missing?
       title.blank? || title.nil?
+    end
+
+    def title_or_content_present
+      return true unless title_missing? && content_missing?
+
+      errors.add(:base, 'Must have a title or content to create note')
+    end
+
+    def content_length
+      return true unless self.content.body.to_plain_text.length >= 1000
+
+      errors.add(:content, 'is too long (maximum is 1000 characters)')
     end
 end
