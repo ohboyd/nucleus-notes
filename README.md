@@ -38,3 +38,5 @@ A useful notes application to keep track of daily notes, and all the tasks on yo
 - [rspec](https://github.com/rspec/rspec-rails) for the test suite
 
 - [factory bot](https://github.com/thoughtbot/factory_bot_rails) to generate quasi-fixtures for easy testing
+
+*Note: If a user has 5 or more notes that are listed as tasks, they'll be able to randomly choose which should be accomplished next if they're unsure*
