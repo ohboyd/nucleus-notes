@@ -24,6 +24,7 @@ end
 gem 'aws-sdk-s3', require: false # Easily connect to s3 with ruby to store files via Active Storage
 gem 'image_processing', '~> 1.2' # Use Active Storage variant
 gem 'devise', '~> 4.7', '>= 4.7.2' # Authentication library with tons of built-in security
+gem 'pundit', '~> 2.1' # Authorization library that uses simple PORs to check permissions
 
 group :development, :test do
   gem 'dotenv-rails', '~> 2.7', '>= 2.7.6' # Store dev environment variables in .env file
