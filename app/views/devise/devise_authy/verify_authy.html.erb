@@ -1,25 +1,32 @@
-<div class="text-center mx-auto">
-  <h1><%= I18n.t('submit_token_title', {:scope => 'devise'}) %></h1>
-</div>
-
+<!-- This is the 3rd page we see for 2fa -->
 <div class="devise-form">
   <div class="card p-5 mx-auto text-center">
+    <p><%= link_to image_tag('logo.jpg', size: 170), root_path %></p>
+
     <%= verify_authy_form do %>
       <legend><%= I18n.t('submit_token_title', {:scope => 'devise'}) %></legend>
-      <%= label_tag 'authy-token' %>
-      <%= text_field_tag :token, "", :autocomplete => "one-time-code", :inputmode => "numeric", :pattern => "[0-9]*", :id => 'authy-token' %>
-      <label>
+      <div class="form-group">
+        <%= 'Authy token'%><br>
+        <%= text_field_tag :token, '', autocomplete: "one-time-code", inputmode: "numeric", pattern: "[0-9]*", id: 'authy-token', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
         <%= check_box_tag :remember_device %>
         <span><%= I18n.t('remember_device', {:scope => 'devise'}) %></span>
-      </label>
+      </div>
 
       <!-- Help tooltip -->
       <!-- You need to configure a help message. -->
       <!-- See documentation: https://github.com/authy/authy-form-helpers#help-tooltip -->
       <!-- <%= link_to '?', '#', :id => 'authy-help' %> -->
 
-      <%= authy_request_sms_link %>
-      <%= submit_tag I18n.t('submit_token', {:scope => 'devise'}), :class => 'btn' %>
+      <div class="form-group">
+        <%= authy_request_sms_link(class: 'btn btn-primary') %>
+      </div>
+
+      <div class="form-group">
+        <%= submit_tag I18n.t('submit_token', {:scope => 'devise'}), class: 'py-2 btn btn-primary' %>
+      </div>
     <% end %>
   </div>
 </div>
