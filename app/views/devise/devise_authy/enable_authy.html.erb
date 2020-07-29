@@ -1,7 +1,23 @@
-<h2><%= I18n.t('authy_register_title', {:scope => 'devise'}) %></h2>
+<div class="text-center mx-auto">
+  <h1><%= I18n.t('authy_register_title', {:scope => 'devise'}) %></h1>
+</div>
 
-<%= enable_authy_form do %>
-  <%= text_field_tag :country_code, '', :autocomplete => :off, :placeholder => I18n.t('devise.country'), :id => "authy-countries"%>
-  <%= text_field_tag :cellphone, '', :autocomplete => :off, :placeholder => I18n.t('devise.cellphone'), :id => "authy-cellphone"%>
-  <p><%= submit_tag I18n.t('enable_authy', {:scope => 'devise'}) %></p>
-<% end %>
+<div class="devise-form">
+  <div class="card p-5 mx-auto text-center">
+    <%= enable_authy_form do %>
+      <div class="form-group">
+        <%= 'Country code' %><br>
+        <%= text_field_tag :country_code, '', autocomplete: 'off', placeholder: I18n.t('devise.country'), id: "authy-countries", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= 'Cellphone number' %><br>
+        <%= text_field_tag :cellphone, '', autocomplete: 'off', placeholder: I18n.t('devise.cellphone'), id: "authy-cellphone", class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= submit_tag I18n.t('enable_authy', {:scope => 'devise'}) %>
+      </div>
+    <% end %>
+  </div>
+</div>
