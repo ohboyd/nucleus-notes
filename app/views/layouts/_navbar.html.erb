@@ -1,10 +1,21 @@
 <nav class="navbar navbar-dark bg-dark">
   <%= link_to image_tag('logo.jpg', size: 120), root_path %>
+
   <% if user_signed_in? %>
-    <div class="float-right">
-      <%= link_to 'New note', new_note_path, class: 'btn btn-primary' %>
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
+    <div class="form-group float-right">
+      <%= link_to 'New note', new_note_path, class: 'mt-3 btn btn-primary' %>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'mt-3 btn btn-primary' %>
+
+      <% unless current_user.authy_enabled %>
+        <div class="form-group mt-2">
+          <%= link_to user_enable_authy_path, class: 'form-control btn btn-outline-secondary', style: 'color: silver' do %>
+            <span>Tinfoil hat (2FA): <%= image_tag('cone.svg')%></span>
+          <% end %>
+        </div>
+      <% end %>
+
     </div>
+
   <% else %>
     <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-primary float-right' %>
   <% end %>
