@@ -56,6 +56,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    authy (2.7.5)
+      httpclient (>= 2.5.3.3)
     aws-eventstream (1.1.0)
     aws-partitions (1.344.0)
     aws-sdk-core (3.104.2)
@@ -85,6 +87,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-authy (2.2.0)
+      authy (>= 2.7.5)
+      devise (>= 4.0.0)
     diff-lcs (1.4.4)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
@@ -101,6 +106,7 @@ GEM
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    httpclient (2.8.3)
     i18n (1.8.4)
       concurrent-ruby (~> 1.0)
     image_processing (1.11.0)
@@ -244,6 +250,7 @@ DEPENDENCIES
   aws-sdk-s3
   bootsnap (>= 1.4.2)
   devise (~> 4.7, >= 4.7.2)
+  devise-authy (~> 2.2)
   dotenv-rails (~> 2.7, >= 2.7.6)
   factory_bot_rails
   faker

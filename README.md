@@ -29,6 +29,8 @@ A useful notes application to keep track of daily notes, and all the tasks on yo
 
 - [devise](https://github.com/heartcombo/devise) for robust authentication
 
+- [devise-two-factor](https://github.com/tinfoil/devise-two-factor) for 2fa (more security and privacy)
+
 - [pundit](https://github.com/varvet/pundit) for simple, scalable authorization
 
 - [dotenv](https://github.com/bkeepers/dotenv) for loading environment variables easily
