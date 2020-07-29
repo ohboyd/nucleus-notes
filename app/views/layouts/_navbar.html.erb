@@ -8,7 +8,7 @@
 
       <% unless current_user.authy_enabled %>
         <div class="form-group mt-2">
-          <%= link_to user_enable_authy_path, class: 'form-control btn btn-outline-secondary', style: 'color: silver' do %>
+          <%= link_to user_enable_authy_path, data: { turbolinks: false }, class: 'form-control btn btn-outline-secondary', style: 'color: silver' do %>
             <span>Tinfoil hat (2FA): <%= image_tag('cone.svg')%></span>
           <% end %>
         </div>
