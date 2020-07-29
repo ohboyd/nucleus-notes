@@ -16,11 +16,11 @@ class Note < ApplicationRecord
     end
 
     def content_missing?
-      content.blank? || content.nil?
+      content.blank?
     end
 
     def title_missing?
-      title.blank? || title.nil?
+      title.blank?
     end
 
     def title_or_content_present
