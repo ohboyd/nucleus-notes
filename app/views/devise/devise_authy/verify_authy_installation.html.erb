@@ -1,3 +1,4 @@
+<!-- This is the 2nd page we see for 2fa -->
 <div class="text-center mx-auto">
   <h1><%= I18n.t('authy_verify_installation_title', {:scope => 'devise'}) %></h1>
 </div>
@@ -16,7 +17,7 @@
       </div>
 
       <div class="form-group">
-        <%= label_tag :token %>
+        <%= 'Token' %><br>
         <%= text_field_tag :token, "", :autocomplete => "one-time-code", :inputmode => "numeric", :pattern => "[0-9]*", :id => 'authy-token' %>
       </div>
 
@@ -30,7 +31,7 @@
       </div>
 
       <div class="form-group">
-        <%= submit_tag I18n.t('enable_my_account', {:scope => 'devise'}), :class => 'btn btn-primary' %>
+        <%= submit_tag I18n.t('enable_my_account', {:scope => 'devise'}), class: 'btn btn-primary' %>
       </div>
     <% end %>
   </div>
