@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  resources :notes
+  resources :notes do
+    member do
+      patch :complete
+    end
+  end
 
   authenticated :user do
     root 'notes#index', as: 'authenticated_root'
