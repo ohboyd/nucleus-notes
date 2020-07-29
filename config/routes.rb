@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, :path_names => {
-    :verify_authy => "/verify-token",
-    :enable_authy => "/enable-two-factor",
-    :verify_authy_installation => "/verify-installation",
-    :authy_onetouch_status => "/onetouch-status"
+    :verify_authy => "/verify_token",
+    :enable_authy => "/enable_two_factor",
+    :verify_authy_installation => "/verify_installation",
+    :authy_onetouch_status => "/onetouch_status"
   }
 
   get 'welcome/index'
