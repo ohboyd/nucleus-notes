@@ -1,12 +1,12 @@
 <center>
   <h1>My Envelope</h1><br>
 
-  <div class="mb-4">
-    <% if show_random_button(@notes) %>
+  <% if show_random_button(@notes) %>
+    <div class="mb-4">
       <h4>Which task should I start on next?</h4>
       <%= link_to 'Randomize', note_path(random_task(@notes)), class: 'btn btn-secondary' %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 
   <% unless @notes.blank? %>
     <div class="card-deck mx-auto">
