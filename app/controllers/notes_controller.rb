@@ -3,7 +3,7 @@ class NotesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @notes = policy_scope(Note).order(updated_at: :desc).with_rich_text_content_and_embeds
+    @notes = policy_scope(Note).unfinished.order(updated_at: :desc).with_rich_text_content_and_embeds
   end
 
   def show

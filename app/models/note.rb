@@ -9,6 +9,8 @@ class Note < ApplicationRecord
   validate :title_or_content_present
   validate :content_length, unless: :content_missing?
 
+  scope :unfinished, -> { where(complete: false) }
+
   private
 
     def set_title_using_content
