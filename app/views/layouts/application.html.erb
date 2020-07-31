@@ -13,15 +13,17 @@
   </head>
 
   <body>
-    <% if user_signed_in? || controller_name == 'welcome' %>
-      <%= render 'layouts/navbar' %>
-    <% end %>
-
-    <br>
+    <div style="min-height: 120px">
+      <% if user_signed_in? || controller_name == 'welcome' %>
+        <%= render 'layouts/navbar' %>
+      <% end %>
+    </div>
 
     <div id="flash">
       <%= render partial: "layouts/errors" %>
     </div>
+
+    <br>
 
     <%= yield %>
   </body>
