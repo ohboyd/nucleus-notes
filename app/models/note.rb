@@ -11,6 +11,9 @@ class Note < ApplicationRecord
 
   scope :unfinished, -> { where(complete: false) }
 
+  CELEBRATIONS = %w[Yas Congratulations Congrats Nice Hooray Applause Winning Baller
+                    Awesome Stoked Amazing Excellent Exceptional].freeze
+
   private
 
     def set_title_using_content
