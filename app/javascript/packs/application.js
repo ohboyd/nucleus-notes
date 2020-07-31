@@ -10,6 +10,9 @@ require("channels")
 require("trix")
 require("@rails/actiontext")
 
+import $ from 'jquery';
+global.$ = jQuery;
+
 import 'bootstrap'
 
 // Uncomment to copy all static images under ../images to the output folder and reference
