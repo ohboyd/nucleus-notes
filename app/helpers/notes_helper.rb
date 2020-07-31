@@ -4,6 +4,6 @@ module NotesHelper
   end
 
   def random_task(notes)
-    notes.where(task: true).order(:created_at).limit(5).sample
+    notes.unfinished.where(task: true).order(:created_at).limit(5).sample
   end
 end
