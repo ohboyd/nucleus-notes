@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :find_note, only: %i[show edit update destroy]
+  before_action :find_note, only: %i[show edit update destroy complete]
   before_action :authenticate_user!
 
   def index
@@ -41,6 +41,13 @@ class NotesController < ApplicationController
   def destroy
     @note.destroy
     redirect_to notes_path, alert: 'Note successfully deleted!'
+  end
+
+  def complete
+    @note.update(complete: true)
+    respond_to do |format|
+      format.js { flash.now[:notice] = 'Note successfully archived!' }
+    end
   end
 
   private

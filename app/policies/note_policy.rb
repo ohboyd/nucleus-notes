@@ -15,6 +15,10 @@ class NotePolicy < ApplicationPolicy
     show?
   end
 
+  def complete?
+    show?
+  end
+
   class Scope < Scope
     def resolve
       scope.where(user_id: user.id)
