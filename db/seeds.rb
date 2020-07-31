@@ -10,4 +10,4 @@ puts 'Creating user'
 user = FactoryBot.create(:user, email: 'mike@example.com')
 
 puts 'Creating notes'
-20.times { FactoryBot.create(:note, user: user) } if Note.count.zero?
+35.times { FactoryBot.create(:note, user: user) } if Note.count.zero?
