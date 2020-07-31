@@ -1,6 +1,11 @@
 <h1 class="text-center">Your note</h1>
 <div class="devise-form mb-2">
   <div class="card p-5 mx-auto text-center">
+    <div id="note_#{@note.id}" style="position: absolute; top:1.5em; right:0em; left:auto;">
+      <%= link_to complete_note_path(@note), method: :patch, local: true do %>
+        <div class="check-or-not" data-toggle="tooltip" title="Archive this note"></div>
+      <% end %>
+    </div>
     <h2><%= @note.title %></h2>
     <p><%= @note.content %></p>
 

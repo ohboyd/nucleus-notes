@@ -46,6 +46,7 @@ class NotesController < ApplicationController
   def complete
     @note.update(complete: true)
     respond_to do |format|
+      format.html { redirect_to notes_url, alert: 'Note successfully archived!' }
       format.js { flash.now[:notice] = 'Note successfully archived!' }
     end
   end
