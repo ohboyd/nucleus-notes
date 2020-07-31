@@ -1,8 +1,10 @@
-<div id="<%= dom_id(note) %>" class="card p-2 m-2" style="min-width: 25%">
-  <h5 class="card-body"><%= note.title %></h5>
-  <div id="note_#{note.id}">
-    <%= link_to 'Done', complete_note_path(note), method: :patch, remote: true %>
+<div id="<%= dom_id(note) %>" class="card p-2 m-2" style="min-width:25%;">
+  <div id="note_#{note.id}" style="position: absolute; top:1.5em; right:0em; left:auto;">
+    <%= link_to complete_note_path(note), method: :patch, remote: true do %>
+      <div class="check-or-not"></div>
+    <% end %>
   </div>
+  <h5 class="card-body"><%= note.title %></h5>
   <p class="card-text"><%= note.content %></p>
   <p class="card-text">
     <small class="text-muted"><%= "Last updated #{time_ago_in_words(note.updated_at)} ago" %></small>
