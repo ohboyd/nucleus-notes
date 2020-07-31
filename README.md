@@ -6,15 +6,21 @@
 # Nucleus Notes
 A useful notes application to keep track of daily notes, and all the tasks on your todo list.
 
+
 ## Fun Features
 
 - Sometimes our list is too long to manage, so there's a feature that becomes active when we start to accumulate tasks in app. If you're unsure what task to do next, Nucleus will do the thinking for you. Simply choose the *Randomize* button once your tasks start piling up, and you can save your brainpower for the work instead of wearing yourself out over the simpler things. Keep in mind, you need to record at least five tasks first!
 
 - In 2019, for yet another year, the most common leaked password was '123456' with at least 23.2 million uses according to [this study](https://www.ncsc.gov.uk/news/most-hacked-passwords-revealed-as-uk-cyber-survey-exposes-gaps-in-online-security) done by the National Cyber Security Center in the UK. So it's critical that your private thoughts stay private, and Nucleus can do that for you. Easily integrate with Two Factor Authentication and put on your tinfoil hat. No one's reading your grocery list without your say-so.
 
+- The text field where you enter your notes support full rich text editing, and you can upload as many files as you want! Keep track of everything in one place!
+
 - Thanks to ajax, it's possible to check off the individual notes as you're finished with them from the index page. Also, using some of Bootstrap's new icons, you can see their behavior change on hover.
 
-- Furthermore, when archiving those notes, you'll be able to see a simple modal popup with a random celebratory GIPHY, just to add a little excitement to your life!
+- Furthermore, when archiving those notes from the index page, you'll be able to see a simple modal popup with a random celebratory GIPHY, just to add a little excitement to your life!
+
+- Like a note you've created, like a todo list, or something that came out more poignant than expected? Feel free to email the note to yourself, or maybe that relative you've been avoiding for far too long now. Momma misses you, after all!
+
 
 ## Technologies
 
@@ -30,9 +36,11 @@ A useful notes application to keep track of daily notes, and all the tasks on yo
 
 - Webpacker for js assets, Sprockets for the SCSS and images
 
-- Bootstrap for the design (along with popper and jquery)
+- Bootstrap for the design and icons (along with popper and jquery)
 
-- Validations are unit tested within rspec model tests
+- Ajax for asynchronous updating, with no page refresh
+
+- Validations are unit tested within rspec model tests which take advantage of factory bot and faker
 
 
 ## Worthwhile Gems
