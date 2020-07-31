@@ -11,3 +11,16 @@
   </p>
   <%= link_to 'View details', note, class: "btn btn-primary" %>
 </div>
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <iframe src="<%= grab_giphy(Note::CELEBRATIONS.sample) %>" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
