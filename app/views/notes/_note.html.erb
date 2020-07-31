@@ -1,0 +1,8 @@
+<div id="<%= dom_id(note) %>" class="card p-2 m-2" style="min-width: 25%">
+  <h5 class="card-body"><%= note.title %></h5>
+  <p class="card-text"><%= note.content %></p>
+  <p class="card-text">
+    <small class="text-muted"><%= "Last updated #{time_ago_in_words(note.updated_at)} ago" %></small>
+  </p>
+  <%= link_to 'View details', note, class: "btn btn-primary" %>
+</div>
